@@ -14,11 +14,14 @@ const App = () => {
         });
         setImages(response.data.results);
     }
+
+    
     return (
         <div className="ui container" style={{marginTop: '20px'}} >
             <SearchBar onSearchSubmit={onSearchSubmit} />
-            <ImageList images={images} />
-            
+            {
+                images.length > 0 && <ImageList images={images} />
+            }
         </div>
     );
 };
